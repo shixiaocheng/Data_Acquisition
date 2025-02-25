@@ -1,9 +1,6 @@
 package com.ljwl.data_acquisition.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -11,6 +8,9 @@ import lombok.Data;
 @Table(name = "SERVER_STATUS")
 public class ServerStatus {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "TIME")
     private String time;
     
     @Column(name = "CPUUSAGE")
